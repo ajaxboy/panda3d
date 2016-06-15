@@ -32,6 +32,15 @@ PUBLISHED:
 
   BLOCKING PyObject *join();
 
+public:
+  PyObject *get_args() const;
+  void set_args(PyObject *);
+
+  static PyObject *call_python_func(PyObject *function, PyObject *args);
+
+PUBLISHED:
+  MAKE_PROPERTY(args, get_args, set_args);
+
 protected:
   virtual void thread_main();
 
